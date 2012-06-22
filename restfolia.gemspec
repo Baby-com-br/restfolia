@@ -14,9 +14,8 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "restfolia"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.files         = %w(Rakefile MIT-LICENSE Readme.md ReadmeDeveloper.md) + Dir['lib/**/*']
+  s.test_files    = Dir['test/**/*'] 
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency "multi_json", "~> 1.3.0"
